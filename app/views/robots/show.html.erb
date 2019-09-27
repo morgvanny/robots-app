@@ -1,0 +1,8 @@
+<%= render 'robot', robot: @robot %>
+
+<h2>Lasers: </h2>
+<ul>
+<% @robot.lasers.each do |l| %>
+  <li><%= l.color %></li>
+<% end %>
+</ul>

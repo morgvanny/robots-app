@@ -1,0 +1,2 @@
+class LasersController < ApplicationController
+end

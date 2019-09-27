@@ -1,0 +1,23 @@
+<%= robot.errors.full_messages if !robot.errors.empty?%>
+
+<%= form_for robot do |f|%>
+<p>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  </p>
+  <p>
+  <%= f.label :number_of_legs %>
+  <%= f.number_field :number_of_legs %>
+  </p>
+  <p>
+  <%= f.label :capable_of_love %>
+  <%= f.check_box :capable_of_love %>
+  </p>
+  <%= f.fields_for :lasers do |l| %>
+    <p>
+    <%= l.label :color %>
+    <%= l.text_field :color %>
+    </p>
+  <% end %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,7 @@
+<ul>
+<% @robots.each do |r|%>
+<li>
+  <%= link_to (render 'robot', robot: r), r %>
+</li>
+<% end %>
+</ul>

@@ -1,5 +1,5 @@
 <%= render 'robot', robot: @robot %>
-
+<%= link_to "Lasers", robot_lasers_path(@robot) %>
 <h2>Lasers: </h2>
 <ul>
 <% @robot.lasers.each do |l| %>

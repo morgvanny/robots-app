@@ -1,0 +1,11 @@
+<%= form_for @laser do |f|%>
+  <%= f.label :color%>
+  <%= f.text_field :color%>
+  <% if !@laser.robot_id %>
+  <%= f.collection_select :robot_id, Robot.all, :id, :name%>
+  <% else %>
+    <%= f.hidden_field :robot_id%>
+  <% end %>
+  
+  <%= f.submit%>
+<% end %>

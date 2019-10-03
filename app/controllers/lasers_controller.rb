@@ -1,5 +1,5 @@
 class LasersController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [:index]
   def index
     if params[:robot_id]
       @lasers = Robot.find(params[:robot_id]).lasers
@@ -21,7 +21,6 @@ class LasersController < ApplicationController
   end
   def create
     @laser = Laser.new(laser_params)
-    binding.pry
     if @laser.save
       redirect_to @laser
     else
